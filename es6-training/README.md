@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-`npm install`
-`yarn install`
+* `npm install`
+* `yarn install`
 
 ## Built With
 
