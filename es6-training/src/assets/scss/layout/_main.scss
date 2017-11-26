@@ -1,0 +1,18 @@
+.site-main {
+	margin-top: 3rem;
+
+	.jumbotron {
+		background-color: transparent;
+
+		margin: 0;
+		padding: 0rem 0rem 1rem;
+
+		h2 {
+		font-weight: 600;
+
+			@media only screen and (max-width: 768px)  {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

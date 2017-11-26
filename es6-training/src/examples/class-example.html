@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>ES6 Testing and Training</title>
+	</head>
+	<body id="site-body" class="page-class-example">
+		<header id="masthead" class="site-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<nav class="navbar navbar-expand-lg navbar-light bg-light">
+							<a class="navbar-brand" href="/">ES6 Testing Playground</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav mr-auto">
+									<li class="nav-item active">
+										<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Examples
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											<a class="dropdown-item" href="/examples/class-example.html">Class Example</a>
+											<a class="dropdown-item" href="/examples/expressions-and-values.html">Expressions / Values</a>
+											<a class="dropdown-item" href="/examples/types.html">Types</a>
+											<a class="dropdown-item" href="/examples/destructuring.html">Destructuring</a>
+											<a class="dropdown-item" href="/examples/comparisons-and-ternaries.html">Comparisons / Ternaries</a>
+											<a class="dropdown-item" href="/examples/functions.html">Functions</a>
+											<a class="dropdown-item" href="/examples/currying.html">Currying</a>
+											<a class="dropdown-item" href="/examples/function-composition.html">Function Composition</a>
+											<a class="dropdown-item" href="/examples/arrays.html">Arrays</a>
+											<a class="dropdown-item" href="/examples/method-chaining.html">Method Chaining</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>	
+				</div>	
+			</div>	
+		</header>
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+					<section id="class-example" class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<h3>Class Example</h3>
+								<hr />
+								<ul class="list-style">
+									<li><a href="#class-simple">Simple</a></li>
+									<li><a href="#class-data">Fetch data</a></li>
+								</ul>	
+							</div>	
+						</div>	
+					</section>
+					<section id="class-simple" class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<h4>Simple Example</h4>
+								<figure class="highlight">
+									<pre>
+										<code>
+class ClassExample {
+	constructor() {
+		this.testFunction = this.testFunction.bind(this)
+	}
+
+	testFunction() {
+		const p    = document.createElement('p');
+		const text = document.createTextNode('Hello World');
+		const div  = document.getElementById('class-simple');
+		
+		p.appendChild(text);
+		div.appendChild(p);
+	}
+}
+
+export default ClassExample									
+										</code>	
+									</pre>
+								</figure>
+								<div id="class-simple-result">
+									<h5>Result</h5>
+								</div>		
+							</div>	
+						</div>	
+					</section>
+					<section id="class-data" class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<h4>Fetching Data Example</h4>
+								<figure class="highlight">
+									<pre>
+										<code>
+import axios from 'axios';
+
+class ClassExample {
+	constructor() {
+		this.testFunction = this.testFunction.bind(this),
+		this.dataFunction = this.dataFunction.bind(this)
+	}
+
+	testFunction() {
+		const p          = document.createElement('p');
+		const text       = document.createTextNode('Hello World');
+		const simpleDiv  = document.getElementById('class-simple-result');
+		
+		p.appendChild(text);
+		simpleDiv.appendChild(p);
+	}
+
+	dataFunction() {
+		axios.get(`http://jonescreativeconcepts.com/wp-json/custom-endpoints/v2/post-type/post`)
+		.then(response => {
+			Array.from(response.data).forEach(function (post) {
+				const article      = document.createElement('article');
+				const articleTitle = document.createElement('h4');
+				const dataTitle    = document.createTextNode(post['title']);
+				const dataText     = document.createTextNode(post['content']);
+				const cardBody     = document.createElement('div');
+				const cardText     = document.createElement('p');
+				const dataDiv      = document.getElementById('class-data-result');
+
+				article.setAttribute('id', post['id']);
+				article.setAttribute('class', 'card');
+				articleTitle.setAttribute('class', 'card-title');
+				cardText.setAttribute('class', 'card-text');
+				cardBody.setAttribute('class', 'card-body');
+				article.appendChild(cardBody);
+				cardText.appendChild(dataText);
+				cardBody.appendChild(articleTitle);
+				cardBody.appendChild(cardText);
+				articleTitle.appendChild(dataTitle);
+				dataDiv.appendChild(article);
+			});
+		})
+		.catch(error => {
+			console.log(error);
+		});
+	}
+}
+
+export default ClassExample									
+										</code>	
+									</pre>
+								</figure>
+								<div id="class-data-result">
+									<h5>Result</h5>
+								</div>		
+							</div>	
+						</div>	
+					</section>		
+				</main>
+			</div>		
+		</div>
+		<footer id="colophon" class="site-footer">
+			<section class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<hr />
+						<p class="float-left">ES6 Testing and Training</p>
+						<p class="float-right">by Brandon Jones</p>
+					</div>	
+				</div>	
+			</section>	
+		</footer>	
+	</body>
+</html>

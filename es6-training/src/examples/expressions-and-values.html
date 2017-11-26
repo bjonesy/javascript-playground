@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>ES6 Testing and Training</title>
+	</head>
+	<body id="site-body" class="page-expressions-and-values">
+		<header id="masthead" class="site-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<nav class="navbar navbar-expand-lg navbar-light bg-light">
+							<a class="navbar-brand" href="/">ES6 Testing Playground</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav mr-auto">
+									<li class="nav-item active">
+										<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Examples
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											<a class="dropdown-item" href="/examples/class-example.html">Class Example</a>
+											<a class="dropdown-item" href="/examples/expressions-and-values.html">Expressions / Values</a>
+											<a class="dropdown-item" href="/examples/types.html">Types</a>
+											<a class="dropdown-item" href="/examples/destructuring.html">Destructuring</a>
+											<a class="dropdown-item" href="/examples/comparisons-and-ternaries.html">Comparisons / Ternaries</a>
+											<a class="dropdown-item" href="/examples/functions.html">Functions</a>
+											<a class="dropdown-item" href="/examples/currying.html">Currying</a>
+											<a class="dropdown-item" href="/examples/function-composition.html">Function Composition</a>
+											<a class="dropdown-item" href="/examples/arrays.html">Arrays</a>
+											<a class="dropdown-item" href="/examples/method-chaining.html">Method Chaining</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>	
+				</div>	
+			</div>	
+		</header>
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+					<section id="expressions-values" class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<h3>Expressions and Values</h3>
+								<hr />
+								<figure class="highlight">
+									<pre>
+										<code>
+const hello = 'Hello';
+hello; // Hello
+
+let a = -1; // this can be accessed everywhere/global, even inside of 'if', 'for' & 'function()'
+
+if (a === 1) {
+	let b = 2; // b cannot be accessed outside the 'if'
+}
+
+for (let c = 0; c < 10; c++) {
+	... // so do the 'c' cannot be acccessed outside of 'for'
+}
+
+function declareAnotherOne() {
+	let d = 5; //undefined outside of function
+}
+										</code>	
+									</pre>
+								</figure>
+							</div>	
+						</div>	
+					</section>	
+				</main>
+			</div>		
+		</div>
+		<footer id="colophon" class="site-footer">
+			<section class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<hr />
+						<p class="float-left">ES6 Testing and Training</p>
+						<p class="float-right">by Brandon Jones</p>
+					</div>	
+				</div>	
+			</section>	
+		</footer>	
+	</body>
+</html>
